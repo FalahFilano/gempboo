@@ -549,3 +549,34 @@
 1513492697 source:g:\duty\pemrograman berorientasi objek\final project\gempbo\src\pausemenu.cpp
 	"PauseMenu.h"
 
+1513515070 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\main.cpp
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<time.h>
+	<iostream>
+	<cstring>
+	"mainmenu.h"
+	"PauseMenu.h"
+	"EndMenu.h"
+
+1513493680 d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\mainmenu.h
+	"SFML/Graphics.hpp"
+
+1513512683 d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\include\pausemenu.h
+	"SFML/Graphics.hpp"
+
+1513516716 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\src\mainmenu.cpp
+	"MainMenu.h"
+
+1513494149 d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\include\mainmenu.h
+	"SFML/Graphics.hpp"
+
+1513512684 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\src\pausemenu.cpp
+	"PauseMenu.h"
+
+1513513945 d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\include\endmenu.h
+	"SFML/Graphics.hpp"
+
+1513513971 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\src\endmenu.cpp
+	"EndMenu.h"
+

@@ -6,11 +6,14 @@
 
 #include "mainmenu.h"
 #include "PauseMenu.h"
+#include "EndMenu.h"
+
 using namespace sf;
 using namespace std;
 
 int MainMenuFunction();
 int PauseMenuFunction();
+int GameOverFunction();
 
 const int M=25;
 const int N=15;
@@ -59,6 +62,7 @@ int main(){
     Sprite frame(t3);
 
     int dx=0;
+    int score=0;
     bool rotate=false, pause=false;
     int colorNum=1;
 	float timer=0,delay=0.3;
@@ -72,8 +76,11 @@ int main(){
 		timer+=time;
 
 		for (int i=0;i<4;i++) if (field[a[i].y][a[i].x]){       //cek batas / gameover
+            field[M][N] = {0};
             window.close();
-            MainMenuFunction();
+            cout << "Game Over" << endl;
+
+            GameOverFunction();
             break;
 		};
 
@@ -168,6 +175,10 @@ int main(){
 		    field[k][j]=field[i][j];
 		}
 		if (count<N) k--;
+		else{
+            score++;
+            cout<<"score "<<score<<endl;
+		}
 	}
 
     dx=0; rotate=0; delay=0.3;
@@ -226,7 +237,7 @@ int MainMenuFunction()
 					switch (menu.GetPressedItem())
 					{
 					case 0:
-					    cout<<"main"<<endl;
+					    cout<<"Play"<<endl;
                         window.clear();
 						window.close();
 						return 1;
@@ -259,7 +270,7 @@ int MainMenuFunction()
 
 int PauseMenuFunction()
 {
-    sf::RenderWindow window(sf::VideoMode(480, 600), "TETRYSSS !!!");
+    sf::RenderWindow window(sf::VideoMode(480, 600), "PAUSE");
 	PauseMenu pause(window.getSize().x, window.getSize().y);
 	while (window.isOpen())
 	{
@@ -274,9 +285,9 @@ int PauseMenuFunction()
 				case sf::Keyboard::Up:
 					pause.MoveUp1();
 					break;
-
+https://github.com/FalahFilano/gempboo
 				case sf::Keyboard::Down:
-					pause.MoveUp2();
+					pause.MoveDown1();
 					break;
 
 				case sf::Keyboard::Return:
@@ -310,6 +321,63 @@ int PauseMenuFunction()
 
 		window.clear();
 		pause.draw1(window);
+		window.display();
+	}
+}
+
+int GameOverFunction()
+{
+    sf::RenderWindow window(sf::VideoMode(480, 600), "GAME OVER");
+	EndMenu gameover(window.getSize().x, window.getSize().y);
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::KeyReleased:
+				switch (event.key.code)
+				{
+				case sf::Keyboard::Up:
+					gameover.MoveUp2();
+					break;
+
+				case sf::Keyboard::Down:
+					gameover.MoveDown2();
+					break;
+
+				case sf::Keyboard::Return:
+					switch (gameover.GetPressedItem2())
+					{
+					case 0:
+					    cout<<"Restart"<<endl;
+                        window.clear();
+						window.close();
+						main();
+						break;
+					case 1:
+					    cout<<"keluar"<<endl;
+                        window.clear();
+						window.close();
+						return 0;
+						break;
+					}
+
+					break;
+				}
+
+				break;
+                case sf::Event::Closed:
+				window.close();
+
+				break;
+
+			}
+		}
+
+		window.clear();
+		gameover.draw2(window);
 		window.display();
 	}
 }

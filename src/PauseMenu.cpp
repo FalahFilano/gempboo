@@ -55,7 +55,7 @@ void PauseMenu::MoveUp1()
     }
 }
 
-void PauseMenu::MoveUp2()
+void PauseMenu::MoveDown1()
 {
         if (setPressedItem1 + 1 < MAX_NUMBER_OF_ITEMS)
     {
@@ -64,3 +64,4 @@ void PauseMenu::MoveUp2()
         menu[setPressedItem1].setColor(sf::Color::Red);
     }
 }
+

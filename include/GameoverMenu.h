@@ -5,21 +5,21 @@
 #define MAX_NUMBER_OF_ITEMS 2
 
 
-class PauseMenu
+class GameoverMenu
 {
     public:
-        PauseMenu(float Width, float Height);
-        ~PauseMenu();
+        GameoverMenu(float Width, float Height);
+        ~GameoverMenu();
 
-        void draw1(sf::RenderWindow &window);
-        void MoveUp1();
-        void MoveDown1();
-        int GetPressedItem1() { return setPressedItem1;}
+        void draw2(sf::RenderWindow &window);
+        void MoveUp2();
+        void MoveDown2();
+        int GetPressedItem2() { return setPressedItem2; }
 
     protected:
 
     private:
-    int setPressedItem1;
+    int setPressedItem2;
     sf::Font font;
     sf::Texture texture;
     sf::Text menu[MAX_NUMBER_OF_ITEMS];
