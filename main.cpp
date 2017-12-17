@@ -3,7 +3,9 @@
 #include <time.h>
 #include <iostream>
 #include <cstring>
+#include <sstream>
 
+#include "SoundTetris.h"
 #include "mainmenu.h"
 #include "PauseMenu.h"
 #include "EndMenu.h"
@@ -57,17 +59,30 @@ int main(){
     Texture t1,t2,t3;
 	t1.loadFromFile("images/tiles.png");
 	//t2.loadFromFile("images/background.png");
-	//t3.loadFromFile("images/frame.png");
+	t3.loadFromFile("images/frame2.png");
 
 	Sprite s(t1);
 	Sprite background(t2);
     Sprite frame(t3);
+
+    Font font;
+    font.loadFromFile("Geforce Bold.ttf");
+
+    Text scoretext;
+    scoretext.setFillColor(Color::White);
+    scoretext.setPosition(140, 510);
+    scoretext.setCharacterSize(24);
+    scoretext.setFont(font);
 
     int dx=0;
     int score=0;
     bool rotate=false, pause=false;
     int colorNum=1;
 	float timer=0,delay=0.3;
+
+	ostringstream scorestring;
+    scorestring <<"Score: "<<score;
+    scoretext.setString(scorestring.str());
 
 	Clock clock;
 
@@ -79,6 +94,7 @@ int main(){
 
 		for (int i=0;i<4;i++) if (field[a[i].y][a[i].x]){       //cek batas / gameover
             field[M][N] = {0};
+            //musics.stop();
             window.close();
             cout << "Game Over" << endl;
             GameOverFunction();
@@ -179,12 +195,16 @@ int main(){
 		else{
             score++;
             cout<<"score "<<score<<endl;
+            scorestring.str("");
+            scorestring <<"Score: "<<score;
+            scoretext.setString(scorestring.str());
 		}
 	}
 
     dx=0; rotate=0; delay=0.3;
 
     /////////draw//////////
+
     window.clear(Color::White);
     window.draw(background);
 
@@ -206,6 +226,7 @@ int main(){
 	  }
 
 	window.draw(frame);
+	window.draw(scoretext);
  	window.display();
 	}*/
 
@@ -427,7 +448,6 @@ int MainMenuFunction()
 				window.close();
 
 				break;
-
 			}
 		}
 
@@ -454,6 +474,10 @@ int PauseMenuFunction()
 				case sf::Keyboard::Up:
 					pause.MoveUp1();
 					break;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 308ae492283ad5d2963ed4b6d1cd6b7628bc67f5
 				case sf::Keyboard::Down:
 					pause.MoveDown1();
 					break;

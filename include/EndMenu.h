@@ -1,4 +1,3 @@
-#ifndef ENDMENU_H
 #define ENDMENU_H
 #include "SFML/Graphics.hpp"
 
@@ -28,4 +27,3 @@ class EndMenu
     sf::Sprite imageSprite;
 };
 
-#endif // ENDMENU_H

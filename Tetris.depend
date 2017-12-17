@@ -580,16 +580,26 @@
 1513513971 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\src\endmenu.cpp
 	"EndMenu.h"
 
+<<<<<<< HEAD
 1513537698 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempboo\main.cpp
+=======
+1513535159 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\main.cpp
+>>>>>>> 308ae492283ad5d2963ed4b6d1cd6b7628bc67f5
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<time.h>
 	<iostream>
 	<cstring>
+<<<<<<< HEAD
+=======
+	<sstream>
+	"SoundTetris.h"
+>>>>>>> 308ae492283ad5d2963ed4b6d1cd6b7628bc67f5
 	"mainmenu.h"
 	"PauseMenu.h"
 	"EndMenu.h"
 
+<<<<<<< HEAD
 1513493680 d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempboo\mainmenu.h
 	"SFML/Graphics.hpp"
 
@@ -611,3 +621,32 @@
 1513512684 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempboo\src\pausemenu.cpp
 	"PauseMenu.h"
 
+=======
+1513437158 g:\duty\pemrograman berorientasi objek\final project\gempboo\mainmenu.h
+	"SFML/Graphics.hpp"
+
+1513519022 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\pausemenu.h
+	"SFML/Graphics.hpp"
+
+1513519033 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\endmenu.h
+	"SFML/Graphics.hpp"
+
+1513518951 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\src\endmenu.cpp
+	"EndMenu.h"
+
+1513528712 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\src\mainmenu.cpp
+	"MainMenu.h"
+
+1513519045 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\mainmenu.h
+	"SFML/Graphics.hpp"
+
+1513518263 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\src\pausemenu.cpp
+	"PauseMenu.h"
+
+1513530552 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\src\soundtetris.cpp
+	"SoundTetris.h"
+
+1513530531 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\soundtetris.h
+	<SFML/Audio.hpp>
+
+>>>>>>> 308ae492283ad5d2963ed4b6d1cd6b7628bc67f5

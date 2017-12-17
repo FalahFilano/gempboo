@@ -46,10 +46,12 @@
 		<Unit filename="include/EndMenu.h" />
 		<Unit filename="include/MainMenu.h" />
 		<Unit filename="include/PauseMenu.h" />
+		<Unit filename="include/SoundTetris.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/EndMenu.cpp" />
 		<Unit filename="src/MainMenu.cpp" />
 		<Unit filename="src/PauseMenu.cpp" />
+		<Unit filename="src/SoundTetris.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
