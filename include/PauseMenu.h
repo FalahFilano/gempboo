@@ -1,4 +1,3 @@
-#ifndef PAUSEMENU_H
 #define PAUSEMENU_H
 #include "SFML/Graphics.hpp"
 
@@ -28,4 +27,3 @@ class PauseMenu
     sf::Sprite imageSprite;
 };
 
-#endif // PAUSEMENU_H

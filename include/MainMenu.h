@@ -1,4 +1,3 @@
-#ifndef MAINMENU_H
 #define MAINMENU_H
 #include "SFML/Graphics.hpp"
 
@@ -28,4 +27,3 @@ class MainMenu
     sf::Sprite imageSprite;
 };
 
-#endif // MAINMENU_H
