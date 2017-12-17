@@ -2,10 +2,10 @@
 #List To Do
 
 
-- [ ] Main Menu (AANG)
+- [x] Main Menu (AANG)
 - [ ] Restart	
 - [ ] Score	(FINO)
-- [ ] Game over	(FINO)
+- [x] Game over	(FINO)
 - [ ] Sound
 
 1. Di Main Menu Terdapat :
