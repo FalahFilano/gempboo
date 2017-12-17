@@ -3,7 +3,6 @@
 
 #define MAX_NUMBER_OF_ITEMS 2
 
-
 class MainMenu
 {
     public:

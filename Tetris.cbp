@@ -43,15 +43,17 @@
 			<Add library="sfml-system" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML/lib" />
 		</Linker>
+		<Unit filename="include/BGMSound.h" />
 		<Unit filename="include/EndMenu.h" />
 		<Unit filename="include/MainMenu.h" />
 		<Unit filename="include/PauseMenu.h" />
-		<Unit filename="include/SoundTetris.h" />
+		<Unit filename="include/Score.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/BGMSound.cpp" />
 		<Unit filename="src/EndMenu.cpp" />
 		<Unit filename="src/MainMenu.cpp" />
 		<Unit filename="src/PauseMenu.cpp" />
-		<Unit filename="src/SoundTetris.cpp" />
+		<Unit filename="src/Score.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

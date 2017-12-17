@@ -580,26 +580,35 @@
 1513513971 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\src\endmenu.cpp
 	"EndMenu.h"
 
-<<<<<<< HEAD
+1513535159 D
+	<sstream>
+	"SoundTetris.h"
+
 1513537698 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempboo\main.cpp
-=======
-1513535159 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\main.cpp
->>>>>>> 308ae492283ad5d2963ed4b6d1cd6b7628bc67f5
+
+1513548159 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\main.cpp
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<time.h>
 	<iostream>
 	<cstring>
-<<<<<<< HEAD
-=======
 	<sstream>
-	"SoundTetris.h"
->>>>>>> 308ae492283ad5d2963ed4b6d1cd6b7628bc67f5
+	"Score.h"
+	"BGMSound.h"
 	"mainmenu.h"
 	"PauseMenu.h"
 	"EndMenu.h"
 
-<<<<<<< HEAD
+1513530531 ae492283ad5d2963ed4b6d1cd6b7628bc67f5
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<time.h>
+	<iostream>
+	<cstring>
+	"mainmenu.h"
+	"PauseMenu.h"
+	"EndMenu.h"
+
 1513493680 d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempboo\mainmenu.h
 	"SFML/Graphics.hpp"
 
@@ -621,7 +630,8 @@
 1513512684 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempboo\src\pausemenu.cpp
 	"PauseMenu.h"
 
-=======
+1513512684 .h"
+
 1513437158 g:\duty\pemrograman berorientasi objek\final project\gempboo\mainmenu.h
 	"SFML/Graphics.hpp"
 
@@ -637,7 +647,7 @@
 1513528712 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\src\mainmenu.cpp
 	"MainMenu.h"
 
-1513519045 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\mainmenu.h
+1513547870 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\mainmenu.h
 	"SFML/Graphics.hpp"
 
 1513518263 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\src\pausemenu.cpp
@@ -649,4 +659,17 @@
 1513530531 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\soundtetris.h
 	<SFML/Audio.hpp>
 
->>>>>>> 308ae492283ad5d2963ed4b6d1cd6b7628bc67f5
+1513546476 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\score.h
+	"SFML/Graphics.hpp"
+	<sstream>
+
+1513547312 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\src\score.cpp
+	"Score.h"
+
+1513548021 g:\duty\pemrograman berorientasi objek\final project\gempboo\include\bgmsound.h
+	<SFML/Audio.hpp>
+	<iostream>
+
+1513548072 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\src\bgmsound.cpp
+	"BGMSound.h"
+

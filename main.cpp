@@ -5,7 +5,8 @@
 #include <cstring>
 #include <sstream>
 
-#include "SoundTetris.h"
+#include "Score.h"
+#include "BGMSound.h"
 #include "mainmenu.h"
 #include "PauseMenu.h"
 #include "EndMenu.h"
@@ -54,182 +55,6 @@ int main(){
     if(MainMenuFunction()==0) return 0;
     GameIn();
 
-	/*RenderWindow window(VideoMode(480, 600), "The Game!");
-
-    Texture t1,t2,t3;
-	t1.loadFromFile("images/tiles.png");
-	//t2.loadFromFile("images/background.png");
-	t3.loadFromFile("images/frame2.png");
-
-	Sprite s(t1);
-	Sprite background(t2);
-    Sprite frame(t3);
-
-    Font font;
-    font.loadFromFile("Geforce Bold.ttf");
-
-    Text scoretext;
-    scoretext.setFillColor(Color::White);
-    scoretext.setPosition(140, 510);
-    scoretext.setCharacterSize(24);
-    scoretext.setFont(font);
-
-    int dx=0;
-    int score=0;
-    bool rotate=false, pause=false;
-    int colorNum=1;
-	float timer=0,delay=0.3;
-
-	ostringstream scorestring;
-    scorestring <<"Score: "<<score;
-    scoretext.setString(scorestring.str());
-
-	Clock clock;
-
-    while (window.isOpen())
-    {
-		float time = clock.getElapsedTime().asSeconds();
-		clock.restart();
-		timer+=time;
-
-		for (int i=0;i<4;i++) if (field[a[i].y][a[i].x]){       //cek batas / gameover
-            field[M][N] = {0};
-            //musics.stop();
-            window.close();
-            cout << "Game Over" << endl;
-            GameOverFunction();
-            break;
-		};
-
-        Event e;
-        while (window.pollEvent(e))
-        {
-            if (e.type == Event::Closed)
-                window.close();
-
-			if (e.type == Event::KeyPressed)
-			  if (e.key.code==Keyboard::Up) rotate=true;
-			  else if (e.key.code==Keyboard::Left) dx=-1;
-			  else if (e.key.code==Keyboard::Right) dx=1;
-			  else if (e.key.code==Keyboard::Down) delay=0.01;
-			  else if (e.key.code==Keyboard::Escape){
-                    pause=true;
-                    PauseMenuFunction();
-                    pause=false;
-			  }
-		}
-
-        //// <- Move -> ///
-        if (check()){               //jika dicek tidak ada yang salah (return 1)
-            for (int i=0;i<4;i++){
-                b[i]=a[i];
-                a[i].x+=dx;
-            }
-        }else{                      //jika dicek ada salah (return 0)
-            for (int i=0;i<4;i++) a[i]=b[i];
-            cout<<"move: batas"<<endl;
-        }
-
-	//////Rotate//////
-        if (rotate){
-            if (check()){
-                cout<<"rotate"<<endl;
-                point p = a[2];     //center of rotation
-                for (int i=0;i<4;i++){
-                    int x = a[i].y-p.y;
-                    int y = a[i].x-p.x;
-                    a[i].x = p.x - x;
-                    a[i].y = p.y + y;
-                    printf("x[%d] %d\ty[%d] %d\n", i, a[i].x, i, a[i].y);
-                }
-            }else{
-                for (int i=0;i<4;i++) a[i]=b[i];
-                cout<<"rotate: batas"<<endl;
-            }
-        }
-
-
-	///////Tick//////
-	if (timer>delay)
-	  {
-        //printf("timer %d delay %d\n",timer, delay);
-	    if(!pause) for (int i=0;i<4;i++){
-            b[i]=a[i];
-            a[i].y+=1;
-        }
-
-		if (!check())
-		{
-		 for (int i=0;i<4;i++){
-            field[b[i].y][b[i].x]=colorNum;
-            //cout<< field[b[i].y][b[i].x]<<endl;
-		 }
-
-		 colorNum=1+rand()%7;
-		 int n=rand()%7;
-		 cout<<"Object Keluar"<<endl;
-
-		 for (int i=0;i<4;i++)
-		   {
-		    a[i].x = figures[n][i] % 2;         //mengconvert posisi figures ke koordinat x
-		    a[i].y = figures[n][i] / 2;         //mengconvert posisi figures ke koordinat y
-		    //cout<<"a.x "<<a[i].x<<endl;
-		    //cout<<"a.y "<<a[i].y<<endl;
-		   }
-		}
-
-	  	timer=0;
-	  }
-
-	///////check lines//////////
-    int k=M-1;
-	for (int i=M-1;i>0;i--)
-	{
-		int count=0;
-		for (int j=0;j<N;j++)
-		{
-		    if (field[i][j]) count++;
-		    field[k][j]=field[i][j];
-		}
-		if (count<N) k--;
-		else{
-            score++;
-            cout<<"score "<<score<<endl;
-            scorestring.str("");
-            scorestring <<"Score: "<<score;
-            scoretext.setString(scorestring.str());
-		}
-	}
-
-    dx=0; rotate=0; delay=0.3;
-
-    /////////draw//////////
-
-    window.clear(Color::White);
-    window.draw(background);
-
-	for (int i=0;i<M;i++)
-    for (int j=0;j<N;j++){
-        if (field[i][j]==0) continue;
-        s.setTextureRect(IntRect(field[i][j]*18,0,18,18));
-        s.setPosition(j*18,i*18);
-        s.move(28,31); //offset
-        window.draw(s);
-	   }
-
-	for (int i=0;i<4;i++)
-	  {
-		s.setTextureRect(IntRect(colorNum*18,0,18,18));
-		s.setPosition(a[i].x*18,a[i].y*18);
-		s.move(28,31); //offset
-		window.draw(s);
-	  }
-
-	window.draw(frame);
-	window.draw(scoretext);
- 	window.display();
-	}*/
-
     return 0;
 }
 
@@ -244,7 +69,17 @@ int GameIn()
     Texture t1,t2,t3;
 	t1.loadFromFile("images/tiles.png");
 	//t2.loadFromFile("images/background.png");
-	//t3.loadFromFile("images/frame.png");
+	t3.loadFromFile("images/frame2.png");
+
+	Font fontuse;
+	fontuse.loadFromFile("Geforce Bold.ttf");
+
+    Text displayName;
+    displayName.setFillColor(Color::White);
+    displayName.setPosition(320,200);
+    displayName.setCharacterSize(28);
+    displayName.setFont(fontuse);
+    displayName.setString("PBO\nKelompok 3");
 
 	Sprite s(t1);
 	Sprite background(t2);
@@ -255,8 +90,19 @@ int GameIn()
     bool rotate=false, pause=false;
     int colorNum=1;
 	float timer=0,delay=0.3;
+	int n=rand()%7;
+
+    Score scoreindex;
+	scoreindex.update(score);
+
+	BGMSound bgm;
+    bgm.play();
 
 	Clock clock;
+	for(int i=0;i<4;i++){
+        a[i].x = figures[n][i] % 2;
+        a[i].y = figures[n][i] / 2;
+	}
 
     while (window.isOpen())
     {
@@ -264,15 +110,18 @@ int GameIn()
 		clock.restart();
 		timer+=time;
 
-		for (int i=0;i<4;i++) if (field[a[i].y][a[i].x]){       //cek batas / gameover
-           for(int j=0;j<=M;j++) for(int k=0;k<=N;k++)
-            field[j][k] = {0};
-            window.clear();
-            window.close();
-            cout << "Game Over" << endl;
-            if(GameOverFunction() == 0) return 0;
-            break;
-		};
+		for (int i=0;i<N;i++)
+            if (field[2][i]!=0){       //cek batas / gameover
+                printf("field 2 %d = %d\n", i,field[2][i]);
+                for(int j=0;j<=M;j++) for(int k=0;k<=N;k++) field[j][k] = {0};
+
+                bgm.stop();
+                window.clear();
+                window.close();
+                cout << "Game Over" << endl;
+                if(GameOverFunction() == 0) return 0;
+                break;
+            }
 
         Event e;
         while (window.pollEvent(e))
@@ -326,7 +175,7 @@ int GameIn()
 	if (timer>delay)
 	  {
         //printf("timer %d delay %d\n",timer, delay);
-	    if(!pause) for (int i=0;i<4;i++){
+	    if(!pause) for (int i=0;i<4;i++){       //jika tidak dipause
             b[i]=a[i];
             a[i].y+=1;
         }
@@ -339,7 +188,7 @@ int GameIn()
 		 }
 
 		 colorNum=1+rand()%7;
-		 int n=rand()%7;
+		 n=rand()%7;
 		 cout<<"Object Keluar"<<endl;
 
 		 for (int i=0;i<4;i++)
@@ -353,6 +202,8 @@ int GameIn()
 
 	  	timer=0;
 	  }
+
+    //for(int j=0;j<M;j++) for(int k=0;k<N;k++) printf("Field [%d][%d] %d\n",j,k,field[j][k]);
 
 	///////check lines//////////
     int k=M-1;
@@ -368,6 +219,7 @@ int GameIn()
 		else{
             score++;
             cout<<"score "<<score<<endl;
+            scoreindex.update(score);
 		}
 	}
 
@@ -395,6 +247,8 @@ int GameIn()
 	  }
 
 	window.draw(frame);
+    window.draw(scoreindex.draw());
+    window.draw(displayName);
  	window.display();
 	}
 
@@ -474,10 +328,7 @@ int PauseMenuFunction()
 				case sf::Keyboard::Up:
 					pause.MoveUp1();
 					break;
-<<<<<<< HEAD
-=======
 
->>>>>>> 308ae492283ad5d2963ed4b6d1cd6b7628bc67f5
 				case sf::Keyboard::Down:
 					pause.MoveDown1();
 					break;
