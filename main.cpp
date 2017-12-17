@@ -5,6 +5,7 @@
 #include <cstring>
 #include <sstream>
 
+#include "SoundTetris.h"
 #include "mainmenu.h"
 #include "PauseMenu.h"
 #include "EndMenu.h"
@@ -56,7 +57,7 @@ int main(){
     Texture t1,t2,t3;
 	t1.loadFromFile("images/tiles.png");
 	//t2.loadFromFile("images/background.png");
-	//t3.loadFromFile("images/frame.png");
+	t3.loadFromFile("images/frame2.png");
 
 	Sprite s(t1);
 	Sprite background(t2);
@@ -66,9 +67,9 @@ int main(){
     font.loadFromFile("Geforce Bold.ttf");
 
     Text scoretext;
-    scoretext.setFillColor(Color::Red);
-    scoretext.setPosition(400, 120);
-    scoretext.setCharacterSize(12);
+    scoretext.setFillColor(Color::White);
+    scoretext.setPosition(140, 510);
+    scoretext.setCharacterSize(24);
     scoretext.setFont(font);
 
     int dx=0;
@@ -91,6 +92,7 @@ int main(){
 
 		for (int i=0;i<4;i++) if (field[a[i].y][a[i].x]){       //cek batas / gameover
             field[M][N] = {0};
+            //musics.stop();
             window.close();
             cout << "Game Over" << endl;
 
@@ -222,8 +224,8 @@ int main(){
 		window.draw(s);
 	  }
 
-    window.draw(scoretext);
 	window.draw(frame);
+	window.draw(scoretext);
  	window.display();
 	}
 
