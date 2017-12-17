@@ -580,12 +580,13 @@
 1513513971 source:d:\ryan\kuliah\pemrograman berbasis objek\the real final project\gempbo\src\endmenu.cpp
 	"EndMenu.h"
 
-1513518679 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\main.cpp
+1513522511 source:g:\duty\pemrograman berorientasi objek\final project\gempboo\main.cpp
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<time.h>
 	<iostream>
 	<cstring>
+	<sstream>
 	"mainmenu.h"
 	"PauseMenu.h"
 	"EndMenu.h"

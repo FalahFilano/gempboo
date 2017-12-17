@@ -3,6 +3,7 @@
 #include <time.h>
 #include <iostream>
 #include <cstring>
+#include <sstream>
 
 #include "mainmenu.h"
 #include "PauseMenu.h"
@@ -61,11 +62,24 @@ int main(){
 	Sprite background(t2);
     Sprite frame(t3);
 
+    Font font;
+    font.loadFromFile("Geforce Bold.ttf");
+
+    Text scoretext;
+    scoretext.setFillColor(Color::Red);
+    scoretext.setPosition(400, 120);
+    scoretext.setCharacterSize(12);
+    scoretext.setFont(font);
+
     int dx=0;
     int score=0;
     bool rotate=false, pause=false;
     int colorNum=1;
 	float timer=0,delay=0.3;
+
+	ostringstream scorestring;
+    scorestring <<"Score: "<<score;
+    scoretext.setString(scorestring.str());
 
 	Clock clock;
 
@@ -178,12 +192,16 @@ int main(){
 		else{
             score++;
             cout<<"score "<<score<<endl;
+            scorestring.str("");
+            scorestring <<"Score: "<<score;
+            scoretext.setString(scorestring.str());
 		}
 	}
 
     dx=0; rotate=0; delay=0.3;
 
     /////////draw//////////
+
     window.clear(Color::White);
     window.draw(background);
 
@@ -204,6 +222,7 @@ int main(){
 		window.draw(s);
 	  }
 
+    window.draw(scoretext);
 	window.draw(frame);
  	window.display();
 	}
@@ -258,7 +277,6 @@ int MainMenuFunction()
 				window.close();
 
 				break;
-
 			}
 		}
 
@@ -285,7 +303,7 @@ int PauseMenuFunction()
 				case sf::Keyboard::Up:
 					pause.MoveUp1();
 					break;
-https://github.com/FalahFilano/gempboo
+
 				case sf::Keyboard::Down:
 					pause.MoveDown1();
 					break;
